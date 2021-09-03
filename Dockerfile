@@ -44,6 +44,7 @@ RUN \
     # install nginx and create default pid directory
     && apk add nginx \
     && mkdir -p /run/nginx \
+    && mkdir -p /var/tmp/nginx\    
     \
     # forward nginx logs to docker log collector
     && sed -i -E "s/error_log .+/error_log \/dev\/stderr warn;/" /etc/nginx/nginx.conf \
