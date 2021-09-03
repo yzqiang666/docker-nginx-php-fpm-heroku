@@ -19,6 +19,6 @@ sed -i -E "s/^;listen.owner = .*/listen.owner = $(whoami)/" /etc/php7/php-fpm.d/
 sed -i -E "s/^user = .*/user = $(whoami)/" /etc/php7/php-fpm.d/www.conf
 sed -i -E "s/^group = (.*)/;group = \1/" /etc/php7/php-fpm.d/www.conf
 sed -i -E "s/^user .*/user $(whoami);/" /etc/nginx/nginx.conf
-
+nginx -t
 nginx -T
 supervisord --nodaemon --configuration /etc/supervisord.conf
