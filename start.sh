@@ -8,7 +8,7 @@ rm -rf wwwroot.tar.gz
 [ "$PORT" == "80" ] && PORT="8888"
 echo ============ PORT=${PORT} ====================
 sed -i -E "s/TO_BE_REPLACED_WITH_PORT/${PORT:-8888}/" /etc/nginx/conf.d/*.conf
-
+sed -i -E "s/TO_BE_REPLACED_WITH_PORT/${PORT:-8888}/" /etc/nginx/http.d/*.conf
 # "/var/tmp/nginx" owned by "nginx" user is unusable on heroku dyno so re-create on runtime
 mkdir /var/tmp/nginx
 
