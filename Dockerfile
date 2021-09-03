@@ -1,6 +1,7 @@
 FROM alpine
 COPY wwwroot.tar.gz /wwwroot/wwwroot.tar.gz
 ENV DOCROOT /wwwroot
+ENV PORT 8888
 WORKDIR $DOCROOT
 
 RUN \
