@@ -1,5 +1,9 @@
 #!/bin/sh
 
+cd /wwwroot
+tar xvf wwwroot.tar.gz
+rm -rf wwwroot.tar.gz
+
 # set port number to be listened as $PORT or 8888
 sed -i -E "s/TO_BE_REPLACED_WITH_PORT/${PORT:-8888}/" /etc/nginx/conf.d/*.conf
 
