@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV DOCROOT /docroot
+ENV DOCROOT /wwwroot
 WORKDIR $DOCROOT
 
 RUN \
