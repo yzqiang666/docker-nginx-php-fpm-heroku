@@ -1,10 +1,7 @@
 {
   "name": "nginx php ",
   "description": "nginx+php in Heroku.",
-  "keywords": ["nginx", "php"]
-
-
-  },
+  "keywords": ["nginx", "php"],
   "website": "",
   "repository": "",
   "stack": "container"
