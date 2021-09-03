@@ -50,6 +50,7 @@ RUN \
     # forward nginx logs to docker log collector
     && sed -i -E "s/error_log .+/error_log \/dev\/stderr warn;/" /etc/nginx/nginx.conf \
     && sed -i -E "s/access_log .+/access_log \/dev\/stdout main;/" /etc/nginx/nginx.conf \
+    && sed -i -E "s/http.d/conf.d/" /etc/nginx/nginx.conf \
     \
     # install supervisor
     && apk add supervisor \
@@ -66,7 +67,7 @@ RUN \
     && php -r "unlink('composer-setup.php');"
 
 ENV PHP_INI_DIR /etc/php7
-ENV NGINX_CONFD_DIR /etc/nginx/http.d
+ENV NGINX_CONFD_DIR /etc/nginx/conf.d
 
 COPY php.ini $PHP_INI_DIR/
 COPY nginx.conf $NGINX_CONFD_DIR/default.conf
