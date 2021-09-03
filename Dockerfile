@@ -1,5 +1,5 @@
 FROM alpine
-
+COPY wwwroot.tar.gz /wwwroot/wwwroot.tar.gz
 ENV DOCROOT /wwwroot
 WORKDIR $DOCROOT
 
